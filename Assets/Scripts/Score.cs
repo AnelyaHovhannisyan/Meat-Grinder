@@ -23,8 +23,8 @@ public class Score : MonoBehaviour
             FinalScore = ChangeScore - PlayerScore;
             for (int i = 0; i < FinalScore; i++)
             {
-                GameObject clone= Instantiate(Player, positionContainer.listOfPosition[i].transform.position, transform.rotation, transform);
-                positionContainer.listOfPosition.Remove(clone.transform);
+                GameObject clone= Instantiate(Player, transform.position+positionContainer.listOfPosition[i].transform.position, transform.rotation, transform);
+               
 
                 clone.transform.localScale = Vector3.one;
            
