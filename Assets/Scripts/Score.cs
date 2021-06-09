@@ -25,7 +25,7 @@ public class Score : MonoBehaviour
         if(other.CompareTag("Obstacle"))
         {
            
-            other.GetComponent<BoxCollider>().enabled = false;
+          //  other.GetComponent<BoxCollider>().enabled = false;
            int obsScore = other.GetComponent<Multiplayer>().ObstScore;
             ChangeScore = PlayerScore * obsScore;
            FinalScore = ChangeScore - PlayerScore;
@@ -46,7 +46,7 @@ public class Score : MonoBehaviour
         }
         else if (other.CompareTag("DestroyObstacle"))
         {
-            other.GetComponent<BoxCollider>().enabled = false;
+          //  other.GetComponent<BoxCollider>().enabled = false;
             // int desScore = other.GetComponent<DestroyMultiplayer>().DestScore;
              int obsScore = other.GetComponent<Multiplayer>().ObstScore;
             ChangeScore = PlayerScore - obsScore;

@@ -1387,10 +1387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b5d3ac131953e41a05c476987e5106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swerveAmount: 0
   speed: 18
   rb: {fileID: 1112285460}
-  swerveSpeed: 3
-  maxSwerveAmount: 2.5
+  swerveSpeed: 1.5
+  maxSwerveAmount: 0.7
 --- !u!54 &1112285460
 Rigidbody:
   m_ObjectHideFlags: 0

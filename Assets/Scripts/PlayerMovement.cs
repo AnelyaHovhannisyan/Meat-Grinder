@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private float lastFrameFingerPositionX;
     private float moveFactorX;
+    public float swerveAmount;
     [SerializeField]
     private float speed = 5;
     [SerializeField]
@@ -15,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 move = transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 move = transform.forward * speed * Time.fixedDeltaTime+transform.right*swerveAmount;
         rb.MovePosition(rb.position + move);
+    
+
+
     }
     private void Update()
     {
@@ -33,8 +37,8 @@ public class PlayerMovement : MonoBehaviour
         {
             moveFactorX = 0f;
         }
-        float swerveAmount = Time.deltaTime * swerveSpeed * moveFactorX;
+        swerveAmount = Time.deltaTime * swerveSpeed * moveFactorX;
         swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
-        transform.Translate(swerveAmount, 0, 0);
+   
     }
 }
