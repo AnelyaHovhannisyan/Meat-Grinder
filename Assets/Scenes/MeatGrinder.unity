@@ -2145,10 +2145,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6339967581363498384, guid: 1844fbaddf897494aaefb2004095a2dc,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 67c90ee23e9e6ca4486ac3cdbb6f534c, type: 2}
     - target: {fileID: 6574550932430330165, guid: 1844fbaddf897494aaefb2004095a2dc,
         type: 3}
       propertyPath: m_Name
       value: ClonePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652862418429860426, guid: 1844fbaddf897494aaefb2004095a2dc,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06719462
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652862418429860426, guid: 1844fbaddf897494aaefb2004095a2dc,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.07913489
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1844fbaddf897494aaefb2004095a2dc, type: 3}

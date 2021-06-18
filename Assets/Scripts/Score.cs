@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    private Animator anim;
     [SerializeField]
+   
   private int PlayerScore=1;
     [SerializeField]
     private int FinalScore;
@@ -18,8 +20,14 @@ public class Score : MonoBehaviour
     [SerializeField]
     private List<GameObject> ClonePlayers;
     private GameObject clone;
-    
+   
+   
 
+    private void Start()
+    {
+        anim = gameObject.GetComponent<Animator>();
+       
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Obstacle"))
@@ -47,17 +55,19 @@ public class Score : MonoBehaviour
         else if (other.CompareTag("DestroyObstacle"))
         {
           //  other.GetComponent<BoxCollider>().enabled = false;
-            // int desScore = other.GetComponent<DestroyMultiplayer>().DestScore;
+      
              int obsScore = other.GetComponent<Multiplayer>().ObstScore;
             ChangeScore = PlayerScore - obsScore;
             FinalScore = PlayerScore - ChangeScore;
             for (int i = 0; i < FinalScore; i++)
             {
                 Debug.Log("mtnuma");
-                Destroy(ClonePlayers[i]);
+                //  Destroy(ClonePlayers[i]);
                 // ClonePlayers[i].SetActive(false);
+               
+                anim.SetBool("Run", true);
+                 anim.SetBool("Fall", true);
                 ClonePlayers.Remove(ClonePlayers[i]);
-
                 PlayerScore--;
             }
 
